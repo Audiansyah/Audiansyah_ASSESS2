@@ -15,3 +15,26 @@ $(document).ready(function() {
     });
   });
   
+
+  // Membuat form HTML
+  const form = document.createElement('form');
+  
+  // Membuat input field untuk setiap atribut
+  for (const key in competitionData) {
+    if (competitionData.hasOwnProperty(key)) {
+      const label = document.createElement('label');
+      label.textContent = key;
+      
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = key;
+      input.value = competitionData[key];
+      
+      form.appendChild(label);
+      form.appendChild(input);
+    }
+  }
+  
+  // Menambahkan form ke dalam dokumen HTML
+  document.body.appendChild(form);
+  
